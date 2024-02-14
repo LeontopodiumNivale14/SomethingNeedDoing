@@ -85,10 +85,10 @@ function main()
   end
 
   yield("/echo At node.")
-  current_gp = tonumber(GetNodeText("GatheringMasterpiece", 113))
-  yield("/echo Current GP: "..current_gp)
+  --current_gp = tonumber(GetNodeText("GatheringMasterpiece", 113))
+  yield("/echo Current GP: "..GetGp())
 
-  if (current_gp > 700) then
+  if (GetGp() > 700) then  --Should maybe look into GetMaxGp() with 'auto-cordial' too? 
     full_loop()
   else
     limited_loop()
